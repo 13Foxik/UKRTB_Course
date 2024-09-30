@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="#B1C2E0">
+
+    <ImageView
+            android:layout_width="150dp"
+            android:layout_height="165dp"
+            app:srcCompat="@drawable/icon"
+            android:id="@+id/ImageUKRTB"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/login"
+            android:ems="10"
+            android:id="@+id/LoginText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageUKRTB"
+            android:layout_marginTop="50sp"
+            android:minHeight="48dp" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/PasswordText"
+            android:hint="@string/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LoginText"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextFields" />
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CheckPassword"
+            app:layout_constraintStart_toStartOf="@+id/PasswordText"
+            app:layout_constraintEnd_toEndOf="@+id/PasswordText"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintTop_toTopOf="@+id/PasswordText"
+            android:button="@drawable/close_eye"
+            android:checked="false"
+            android:layout_marginTop="10sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
