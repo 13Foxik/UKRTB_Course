@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">UKRTB_Course</string>
-    <string name="login">Логин</string>
+    <string name="login">Логин/Эл. Почта</string>
     <string name="password">Пароль</string>
+    <string name="username">username</string>
+    <string name="fio">ФИО</string>
 
 </resources>

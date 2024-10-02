@@ -15,12 +15,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LoadingScreen extends AppCompatActivity {
 
-    private final int freezeTime = 3000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading_screen);
+
+        int freezeTime = 1000;
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

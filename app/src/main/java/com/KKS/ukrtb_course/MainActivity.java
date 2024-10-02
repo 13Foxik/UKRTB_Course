@@ -1,26 +1,20 @@
 package com.KKS.ukrtb_course;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Icon;
-import android.media.Image;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     private CheckBox CheckPassword;
     private EditText PasswordText;
+    private ImageButton transitionToReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
         PasswordText = findViewById(R.id.PasswordText);
         CheckPassword = findViewById(R.id.CheckPassword);
+        transitionToReg = findViewById(R.id.ButtonReg);
 
         CheckPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CheckPasswordFunction(CheckPassword, PasswordText);
+            }
+        });
+
+        transitionToReg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View v) {
+                Intent regActivity = new Intent(MainActivity.this, registration.class);
+                MainActivity.this.startActivity(regActivity);
+                MainActivity.this.finish();
             }
         });
     }
