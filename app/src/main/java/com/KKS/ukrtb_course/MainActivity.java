@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox CheckPassword;
     private EditText PasswordText;
     private ImageButton transitionToReg;
+    private ImageButton transitionToSign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         PasswordText = findViewById(R.id.PasswordText);
         CheckPassword = findViewById(R.id.CheckPassword);
         transitionToReg = findViewById(R.id.ButtonReg);
+        transitionToSign = findViewById(R.id.ButtonSignUp);
 
         CheckPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
             public  void onClick(View v) {
                 Intent regActivity = new Intent(MainActivity.this, registration.class);
                 MainActivity.this.startActivity(regActivity);
+                MainActivity.this.finish();
+            }
+        });
+        transitionToSign.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View v) {
+                Intent profActivity = new Intent(MainActivity.this, Profile.class);
+                MainActivity.this.startActivity(profActivity);
                 MainActivity.this.finish();
             }
         });

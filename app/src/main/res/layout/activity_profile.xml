@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B1C2E0"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <!-- поле для выбора даты рождения -->
+
+    <!-- кнопка для выбора аватара -->
+
+    <ImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:contentDescription="Avatar"
+        android:focusable="true"
+        android:onClick="onAvatarClick"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <EditText
+        android:id="@+id/TextFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите ФИО"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/TextBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="Дата рождения" />
+
+</LinearLayout>
