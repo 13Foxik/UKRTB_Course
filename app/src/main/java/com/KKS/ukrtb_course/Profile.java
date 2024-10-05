@@ -35,7 +35,7 @@ public class Profile extends AppCompatActivity {
         imageViewAvatar.setOnClickListener(v -> selectImageFromGallery());
     }
 
-    // отображение календаря и выбор даты
+    // отображение календаря и выбор даты.
     private void showDatePickerDialog() {
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
