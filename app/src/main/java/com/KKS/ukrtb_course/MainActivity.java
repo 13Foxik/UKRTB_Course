@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox CheckPassword;
     private EditText PasswordText;
+    private EditText LoginText;
     private ImageButton transitionToReg;
     private ImageButton transitionToSign;
 
@@ -22,15 +23,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PasswordText = findViewById(R.id.PasswordText);
-        CheckPassword = findViewById(R.id.CheckPassword);
-        transitionToReg = findViewById(R.id.ButtonReg);
-        transitionToSign = findViewById(R.id.ButtonSignUp);
+        Init(); // Создал отдельный метод для иницилиазиции переменных 52 строчка(йоу)
 
         CheckPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CheckPasswordFunction(CheckPassword, PasswordText);
+                CheckPasswordFunction();
             }
         });
 
@@ -51,7 +49,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void CheckPasswordFunction(CheckBox CheckPassword, EditText PasswordText){              //чтобы немного раскомповать код решил создать отдельный метод который
+
+    private void Init(){
+        PasswordText = findViewById(R.id.PasswordText);
+        LoginText= findViewById(R.id.LoginText);
+        CheckPassword = findViewById(R.id.CheckPassword);
+        transitionToReg = findViewById(R.id.ButtonReg);
+        transitionToSign = findViewById(R.id.ButtonSignUp);
+    }
+
+    private void CheckPasswordFunction(){                                                           //чтобы немного раскомповать код решил создать отдельный метод который
         this.CheckPassword.setButtonDrawable(R.drawable.checkbox_selector);                         //исполняет функционал глазика
 
         if(CheckPassword.isChecked()){

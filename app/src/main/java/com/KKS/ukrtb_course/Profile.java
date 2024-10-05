@@ -1,5 +1,6 @@
 package com.KKS.ukrtb_course;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,7 +17,6 @@ import java.util.Calendar;
 public class Profile extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
-    private EditText editTextBirthday;
     private ImageView imageViewAvatar;
 
     @Override
@@ -24,33 +24,18 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        EditText editTextFullName = findViewById(R.id.TextFullName);
-        editTextBirthday = findViewById(R.id.TextBirthday);
-        imageViewAvatar = findViewById(R.id.imageViewAvatar);
-
-        // календарь для выбора даты
-        editTextBirthday.setOnClickListener(v -> showDatePickerDialog());
+        Init();
 
         // для смены аватарки нужно тыкнуть на аватарку
         imageViewAvatar.setOnClickListener(v -> selectImageFromGallery());
     }
 
-    // отображение календаря и выбор даты.
-    private void showDatePickerDialog() {
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                (view, year1, monthOfYear, dayOfMonth) -> {
-                    String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1;
-                    editTextBirthday.setText(selectedDate);
-                }, year, month, day);
-        datePickerDialog.show();
+    private void Init(){
+        imageViewAvatar = findViewById(R.id.imageViewAvatar);
     }
 
     // выбор изобржаения из галереи
+    @SuppressLint("IntentReset")
     private void selectImageFromGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/*");

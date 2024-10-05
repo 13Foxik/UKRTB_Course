@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "932332588131",
+    "project_id": "ukrtbcourse-dcd4a",
+    "storage_bucket": "ukrtbcourse-dcd4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932332588131:android:08b587281aed5eb891fc56",
+        "android_client_info": {
+          "package_name": "com.KKS.ukrtb_course"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKbtUmxSzjoKjouCoxTlS9QPPiG-UsVNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
