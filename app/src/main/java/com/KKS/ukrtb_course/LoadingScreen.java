@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.widget.ImageView;
 import java.util.Random;
 import com.bumptech.glide.Glide;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,15 +28,23 @@ public class LoadingScreen extends AppCompatActivity {
 
         RandomizeGifs();
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run(){
-                Intent LoadingScreen = new Intent(LoadingScreen.this, MainActivity.class);
-                LoadingScreen.this.startActivity(LoadingScreen);
-                LoadingScreen.this.finish();
-            }
-        }, freezeTime);
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            startActivity(new Intent(LoadingScreen.this, MainActivity.class));
+        }
+        else{
+            startActivity(new Intent(LoadingScreen.this, Profile.class));
+        }
+
+
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run(){
+//                Intent LoadingScreen = new Intent(LoadingScreen.this, MainActivity.class);
+//                LoadingScreen.this.startActivity(LoadingScreen);
+//                LoadingScreen.this.finish();
+//            }
+//        }, freezeTime);
     }
     private void RandomizeGifs(){
         Random random = new Random();

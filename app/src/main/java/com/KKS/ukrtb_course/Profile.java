@@ -7,10 +7,16 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.Firebase;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.IOException;
 import java.util.Calendar;
 
@@ -56,5 +62,10 @@ public class Profile extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void onClickLogout(View view){
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(Profile.this, MainActivity.class));
     }
 }

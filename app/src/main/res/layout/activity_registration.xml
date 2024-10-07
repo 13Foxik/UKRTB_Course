@@ -26,7 +26,7 @@
             android:autofillHints=""
             android:hint="NickName"
             android:ems="10"
-            android:id="@+id/FioText"
+            android:id="@+id/NickName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ImageUKRTB"
@@ -44,7 +44,7 @@
             android:importantForAutofill="no"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FioText"
+            app:layout_constraintTop_toBottomOf="@+id/NickName"
             android:minHeight="48dp"
             app:layout_constraintHorizontal_bias="0.503"
             tools:ignore="TextFields" />
