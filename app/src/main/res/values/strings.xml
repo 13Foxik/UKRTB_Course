@@ -3,6 +3,6 @@
     <string name="login">E-mail</string>
     <string name="password">Пароль</string>
     <string name="username">username</string>
-    <string name="fio">ФИО</string>
+    <string name="nickname">nickname</string>
 
 </resources>

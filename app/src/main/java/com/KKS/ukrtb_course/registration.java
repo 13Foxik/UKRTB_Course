@@ -44,14 +44,24 @@ public class registration extends AppCompatActivity {
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()){
-                                        HashMap<String, String> userInfo = new HashMap<>();
-                                        userInfo.put("email", binding.edLogin.getText().toString());
-                                        userInfo.put("username", binding.NickName.getText().toString());
-                                        FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                                .setValue(userInfo);
+                                    if(binding.edSuccsesPassword.getText().toString().equals( binding.edPassword.getText().toString() ))
+                                    {
+                                        if(task.isSuccessful()){
+                                            HashMap<String, String> userInfo = new HashMap<>();
+                                            userInfo.put("email", binding.edLogin.getText().toString());
+                                            userInfo.put("username", binding.NickName.getText().toString());
+                                            FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                    .setValue(userInfo);
 
-                                        startActivity(new Intent(registration.this, Profile.class));
+                                            startActivity(new Intent(registration.this, Profile.class));
+                                        }
+                                        else if(binding.edPassword.getText().toString().length() < 6) {
+                                            Toast.makeText( getApplicationContext(), "Пароль не может быть меньше 6 символов", Toast.LENGTH_SHORT ).show();
+                                        }
+
+                                    }
+                                    else {
+                                        Toast.makeText( getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT ).show();
                                     }
                                 }
                             });
