@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox CheckPassword;
     private EditText PasswordText;
-    private EditText LoginText;
     private ImageButton registrationBtn;
     private ImageButton loginBtn;
     private ActivityMainBinding binding;
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.finish();
             }
         });
+
         loginBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v) {
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void Init(){
         PasswordText = findViewById(R.id.PasswordText);
-        LoginText= findViewById(R.id.LoginText);
         CheckPassword = findViewById(R.id.CheckPassword);
         registrationBtn = findViewById(R.id.ButtonReg);
         loginBtn = findViewById(R.id.ButtonSignUp);

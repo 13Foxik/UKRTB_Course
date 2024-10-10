@@ -58,7 +58,6 @@ public class registration extends AppCompatActivity {
                                         else if(binding.edPassword.getText().toString().length() < 6) {
                                             Toast.makeText( getApplicationContext(), "Пароль не может быть меньше 6 символов", Toast.LENGTH_SHORT ).show();
                                         }
-
                                     }
                                     else {
                                         Toast.makeText( getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT ).show();
@@ -66,11 +65,10 @@ public class registration extends AppCompatActivity {
                                 }
                             });
                 }
-
-
             }
         });
     }
+
     private void init(){
         regButton = findViewById(R.id.RegButton);
     }

@@ -28,24 +28,22 @@ public class LoadingScreen extends AppCompatActivity {
 
         RandomizeGifs();
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            startActivity(new Intent(LoadingScreen.this, MainActivity.class));
-        }
-        else{
-            startActivity(new Intent(LoadingScreen.this, Profile.class));
-        }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run(){
 
-
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run(){
-//                Intent LoadingScreen = new Intent(LoadingScreen.this, MainActivity.class);
-//                LoadingScreen.this.startActivity(LoadingScreen);
-//                LoadingScreen.this.finish();
-//            }
-//        }, freezeTime);
+                //Проверка -> авторизировался ли уже пользователь на устройстве
+                if(FirebaseAuth.getInstance().getCurrentUser() == null){
+                    startActivity(new Intent(LoadingScreen.this, MainActivity.class));
+                }
+                else{
+                    startActivity(new Intent(LoadingScreen.this, Profile.class));
+                }
+            }
+        }, freezeTime);
     }
+
     private void RandomizeGifs(){
         Random random = new Random();
         ImageView GifImage = findViewById(R.id.GifImage);
