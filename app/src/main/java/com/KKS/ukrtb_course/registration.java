@@ -37,30 +37,19 @@ public class registration extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(binding.edLogin.getText().toString().isEmpty() || binding.edPassword.getText().toString().isEmpty() || binding.NickName.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(), "Fields cannot be  empty", Toast.LENGTH_SHORT).show();
-                }else{
+                if(Validation()){
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.edLogin.getText().toString(), binding.edPassword.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(binding.edSuccsesPassword.getText().toString().equals( binding.edPassword.getText().toString() ))
-                                    {
-                                        if(task.isSuccessful()){
-                                            HashMap<String, String> userInfo = new HashMap<>();
-                                            userInfo.put("email", binding.edLogin.getText().toString());
-                                            userInfo.put("username", binding.NickName.getText().toString());
-                                            FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                                    .setValue(userInfo);
+                                    if(task.isSuccessful()){
+                                        HashMap<String, String> userInfo = new HashMap<>();
+                                        userInfo.put("email", binding.edLogin.getText().toString());
+                                        userInfo.put("username", binding.NickName.getText().toString());
+                                        FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                .setValue(userInfo);
 
-                                            startActivity(new Intent(registration.this, Profile.class));
-                                        }
-                                        else if(binding.edPassword.getText().toString().length() < 6) {
-                                            Toast.makeText( getApplicationContext(), "Пароль не может быть меньше 6 символов", Toast.LENGTH_SHORT ).show();
-                                        }
-                                    }
-                                    else {
-                                        Toast.makeText( getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT ).show();
+                                        startActivity(new Intent(registration.this, Profile.class));
                                     }
                                 }
                             });
@@ -71,5 +60,22 @@ public class registration extends AppCompatActivity {
 
     private void init(){
         regButton = findViewById(R.id.RegButton);
+    }
+
+    private boolean Validation(){
+        boolean result = false;
+        if(binding.edLogin.getText().toString().isEmpty() || binding.edPassword.getText().toString().isEmpty() || binding.NickName.getText().toString().isEmpty() || binding.edSuccsesPassword.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Не все обязательные поля были заполнены", Toast.LENGTH_SHORT).show();
+        }
+        else if(binding.edPassword.getText().toString().length() < 6) {
+            Toast.makeText( getApplicationContext(), "Пароль не может быть меньше 6 символов", Toast.LENGTH_SHORT ).show();
+        }
+        else if(!binding.edSuccsesPassword.getText().toString().equals( binding.edPassword.getText().toString())){
+            Toast.makeText( getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT ).show();
+        }else{
+            result = true;
+        }
+
+        return result;
     }
 }
