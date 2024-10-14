@@ -32,14 +32,7 @@ public class LoadingScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run(){
-
-                //Проверка -> авторизировался ли уже пользователь на устройстве
-                if(FirebaseAuth.getInstance().getCurrentUser() == null){
-                    startActivity(new Intent(LoadingScreen.this, MainActivity.class));
-                }
-                else{
-                    startActivity(new Intent(LoadingScreen.this, Profile.class));
-                }
+                CheckSignin();
             }
         }, freezeTime);
     }
@@ -53,6 +46,17 @@ public class LoadingScreen extends AppCompatActivity {
                 .asGif()
                 .load(gifArray[randomGifIndex])
                 .into(GifImage);
+    }
+
+
+    //Проверка -> авторизировался ли уже пользователь на устройстве
+    private void CheckSignin(){
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            startActivity(new Intent(LoadingScreen.this, MainActivity.class));
+        }
+        else{
+            startActivity(new Intent(LoadingScreen.this, Profile.class));
+        }
     }
 
 }

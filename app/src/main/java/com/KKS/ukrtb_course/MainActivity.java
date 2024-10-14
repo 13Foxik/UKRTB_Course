@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         startActivity(new Intent(MainActivity.this, Profile.class));
                                     }
+                                    else{
+                                        Toast.makeText(getApplicationContext(), "Неправильно введен логин или пароль", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             });
                 }
