@@ -53,10 +53,13 @@ public class LoadingScreen extends AppCompatActivity {
     private void CheckSignin(){
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
             startActivity(new Intent(LoadingScreen.this, MainActivity.class));
+            finish();  // Закрываем экран загрузки
         }
         else{
             startActivity(new Intent(LoadingScreen.this, Profile.class));
+            finish();  // Закрываем экран загрузки
         }
     }
+
 
 }
