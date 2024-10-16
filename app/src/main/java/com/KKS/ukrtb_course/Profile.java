@@ -43,7 +43,6 @@ public class Profile extends AppCompatActivity {
     private DatabaseReference mDataBase;
     private DatabaseReference uidRef;
     private StorageReference mStorageRef;
-    private StorageReference mStorageRefDel;
     private Uri uploadUri;
 
     @Override
@@ -59,17 +58,27 @@ public class Profile extends AppCompatActivity {
 
         //Выставляет поля из БД
         setDates();
-
     }
 
     private void Init(){
         imageViewAvatar = findViewById(R.id.imageViewAvatar);
         mDataBase = FirebaseDatabase.getInstance().getReference();
-        uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            uid = auth.getCurrentUser().getUid();
+        } else {
+            Log.e("TAG", "User not authenticated");
+            // Здесь можно перенаправить пользователя на экран входа
+            startActivity(new Intent(Profile.this, MainActivity.class));
+            finish(); // Закрыть текущую активность
+            return;
+        }
+
         uidRef = mDataBase.child("Users/").child(uid);
         mStorageRef = FirebaseStorage.getInstance().getReference("ImageAvatars");
-
     }
+
     private void setDates(){
         ValueEventListener imageListener = new ValueEventListener() {
             @Override
@@ -80,7 +89,12 @@ public class Profile extends AppCompatActivity {
                         binding.NickName.setText(user.username);
                         binding.edLogin.setText(user.email);
                         if(user.image_id != null){
-                            Picasso.get().load(user.image_id).into(imageViewAvatar);
+                            // Проверяем на наличие действительного URL
+                            if (!user.image_id.isEmpty()) {
+                                Picasso.get().load(user.image_id).into(imageViewAvatar);
+                            } else {
+                                Log.e("TAG", "Image ID is empty");
+                            }
                         }
                     } else {
                         // Логирование или обработка случая, когда user == null
@@ -101,7 +115,7 @@ public class Profile extends AppCompatActivity {
         uidRef.addValueEventListener(imageListener);
     }
 
-    // выбор изобржаения из галереи
+    // выбор изображения из галереи
     @SuppressLint("IntentReset")
     private void selectImageFromGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -109,7 +123,7 @@ public class Profile extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE);
     }
 
-    // вроде для обработки изображения или чет такое
+    // Обработка результата выбора изображения
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -121,26 +135,37 @@ public class Profile extends AppCompatActivity {
         }
     }
 
-
-    //Загружает в базу данных фотку, а так же создает у пользователя ссылку по которой можно обратится к этой фотке
-    //Если фотку меняют, в таком случае она просто перезаписывается
+    // Загружает в базу данных фото, а также создает у пользователя ссылку по которой можно обратиться к этой фотке
     private void UploadImage(){
+        if (imageViewAvatar.getDrawable() == null) {
+            Log.e("TAG", "Drawable is null, cannot upload image");
+            return;
+        }
+
         Bitmap bitmap = ((BitmapDrawable) imageViewAvatar.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] byteArray = baos.toByteArray();
         final StorageReference mRef = mStorageRef.child(uid + "Avatar");
+
         UploadTask up = mRef.putBytes(byteArray);
-        Task<Uri> task = up.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+        up.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                }
                 return mRef.getDownloadUrl();
             }
         }).addOnCompleteListener(new OnCompleteListener<Uri>() {
             @Override
             public void onComplete(@NonNull Task<Uri> task) {
-                uploadUri = task.getResult();
-                mDataBase.child("Users").child(uid).child("image_id").setValue(uploadUri.toString());
+                if (task.isSuccessful()) {
+                    uploadUri = task.getResult();
+                    mDataBase.child("Users").child(uid).child("image_id").setValue(uploadUri.toString());
+                } else {
+                    Log.e("TAG", "Failed to get download URL: " + task.getException());
+                }
             }
         });
     }
@@ -148,5 +173,6 @@ public class Profile extends AppCompatActivity {
     public void onClickLogout(View view){
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(Profile.this, MainActivity.class));
+        finish(); // Закрыть текущую активность
     }
 }
