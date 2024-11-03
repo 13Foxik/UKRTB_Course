@@ -173,6 +173,10 @@ public class Profile extends AppCompatActivity {
     public void onClickLogout(View view){
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(Profile.this, MainActivity.class));
-        finish(); // Закрыть текущую активность
+        finish();
+    }
+    public void onClickCourse(View view){
+        startActivity(new Intent(Profile.this, Courses.class));
+        finish();
     }
 }
