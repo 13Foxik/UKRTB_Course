@@ -8,15 +8,48 @@
         tools:context=".Courses"
         android:background="@color/background">
 
-    <TextView
-            android:text="курсы"
-            android:layout_width="133dp"
-            android:layout_height="57dp"
-            android:id="@+id/textView"
-            android:textSize="34sp"
+    <ImageButton
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/unity"
+            android:id="@+id/UnityBtn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp"
-            app:layout_constraintHorizontal_bias="0.501" />
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="16dp"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:onClick="BlockBtnOnClock" />
+
+    <ImageButton
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/ones"
+            android:id="@+id/OnesBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/robotechnology"
+            android:id="@+id/RobotBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintTop_toBottomOf="@+id/UnityBtn"
+            android:layout_marginTop="16dp" />
+
+    <ImageButton
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/drons"
+            android:id="@+id/DronsBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/OnesBtn"
+            android:layout_marginTop="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

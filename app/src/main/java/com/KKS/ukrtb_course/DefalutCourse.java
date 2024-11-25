@@ -5,28 +5,27 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.KKS.ukrtb_course.databinding.ActivityCoursesBinding;
-import com.KKS.ukrtb_course.databinding.ActivityProfileBinding;
+import com.KKS.ukrtb_course.databinding.ActivityDefalutCourseBinding;
 
-public class Courses extends AppCompatActivity {
+public class DefalutCourse extends AppCompatActivity {
 
-    private ActivityCoursesBinding binding;
 
+    private ActivityDefalutCourseBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCoursesBinding.inflate(getLayoutInflater());
+        binding = ActivityDefalutCourseBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-    }
 
-    public void BlockBtnOnClock(View view){
-        startActivity(new Intent(Courses.this, DefalutCourse.class));
+    }
+    public void BlockOneOnClick(View view){
+        startActivity(new Intent(DefalutCourse.this, DefaultCourseBlockOne.class));
         finish();
     }
 }
