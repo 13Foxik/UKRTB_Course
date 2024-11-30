@@ -10,25 +10,31 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.KKS.ukrtb_course.databinding.ActivityDefalutCourseBinding;
 import com.KKS.ukrtb_course.databinding.ActivityDefaultCourseBlockOneBinding;
+import com.KKS.ukrtb_course.databinding.ActivityDefaultPage2Binding;
 
-public class DefaultCourseBlockOne extends AppCompatActivity {
+import java.util.function.ObjIntConsumer;
 
-    private ActivityDefaultCourseBlockOneBinding binding;
+public class DefaultPage2 extends AppCompatActivity {
+
+    private ActivityDefaultPage2Binding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDefaultCourseBlockOneBinding.inflate(getLayoutInflater());
+        binding = ActivityDefaultPage2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
     }
-    public void StageOneOnClick(View view){
-        startActivity(new Intent(DefaultCourseBlockOne.this, DefaultCourseBlockOneStageOne.class));
+    public void nextOnClick(View view){
+        startActivity(new Intent(DefaultPage2.this, DefaultPage3.class));
+        finish();
+    }
+    public void backOnClick(View view){
+        startActivity(new Intent(DefaultPage2.this, DefaultCourseBlockOneStageOne.class));
         finish();
     }
     public void homeOnClick(View view){
-        startActivity(new Intent(DefaultCourseBlockOne.this, DefalutCourse.class));
+        startActivity(new Intent(DefaultPage2.this, DefaultCourseBlockOne.class));
         finish();
     }
 }

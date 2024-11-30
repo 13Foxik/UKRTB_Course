@@ -10,6 +10,17 @@
         tools:layout_editor_absoluteY="-94dp"
         tools:layout_editor_absoluteX="-4dp">
 
+    <Button
+            android:text="Home"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:id="@+id/button7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:onClick="homeOnClick" />
+
     <TextView
             android:text="COURSENAME"
             android:layout_width="320dp"
@@ -19,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="68dp" />
 
     <Button
             android:text="Stage1"

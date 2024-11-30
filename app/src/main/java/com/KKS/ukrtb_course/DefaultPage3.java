@@ -10,26 +10,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.KKS.ukrtb_course.databinding.ActivityCoursesBinding;
-import com.KKS.ukrtb_course.databinding.ActivityDefalutCourseBinding;
+import com.KKS.ukrtb_course.databinding.ActivityDefaultPage2Binding;
+import com.KKS.ukrtb_course.databinding.ActivityDefaultPage3Binding;
 
-public class DefalutCourse extends AppCompatActivity {
+public class DefaultPage3 extends AppCompatActivity {
 
+    private ActivityDefaultPage3Binding binding;
 
-    private ActivityDefalutCourseBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDefalutCourseBinding.inflate(getLayoutInflater());
+        binding = ActivityDefaultPage3Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
     }
-    public void BlockOneOnClick(View view){
-        startActivity(new Intent(DefalutCourse.this, DefaultCourseBlockOne.class));
-        finish();
-    }
     public void homeOnClick(View view){
-        startActivity(new Intent(DefalutCourse.this, Courses.class));
+        startActivity(new Intent(DefaultPage3.this, DefaultCourseBlockOne.class));
         finish();
     }
 }

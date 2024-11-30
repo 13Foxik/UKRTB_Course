@@ -29,4 +29,8 @@ public class Courses extends AppCompatActivity {
         startActivity(new Intent(Courses.this, DefalutCourse.class));
         finish();
     }
+    public void profileOnClick(View view){
+        startActivity(new Intent(Courses.this, Profile.class));
+        finish();
+    }
 }

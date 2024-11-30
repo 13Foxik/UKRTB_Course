@@ -179,4 +179,5 @@ public class Profile extends AppCompatActivity {
         startActivity(new Intent(Profile.this, Courses.class));
         finish();
     }
+
 }
