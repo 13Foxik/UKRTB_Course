@@ -1,5 +1,6 @@
 package com.KKS.ukrtb_course;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 
 public class registration extends AppCompatActivity {
 
@@ -39,6 +42,7 @@ public class registration extends AppCompatActivity {
                 if (Validation()) {
                     String email = binding.edLogin.getText().toString();
                     String password = binding.edPassword.getText().toString();
+                    String birthday = binding.TextBirthday.getText().toString();
 
                     // Создание пользователя в Firebase
                     mAuth.createUserWithEmailAndPassword(email, password)
@@ -59,7 +63,7 @@ public class registration extends AppCompatActivity {
                                                                         Toast.LENGTH_SHORT).show();
 
                                                                 // Запись данных нового пользователя в базу данных
-                                                                writeNewUser(user.getUid(), binding.NickName.getText().toString(), email);
+                                                                writeNewUser(user.getUid(), binding.NickName.getText().toString(), email, birthday);
 
                                                                 // Разлогинить пользователя, чтобы он подтвердил email
                                                                 mAuth.signOut();
@@ -103,8 +107,9 @@ public class registration extends AppCompatActivity {
         if (binding.edLogin.getText().toString().isEmpty() ||
                 binding.edPassword.getText().toString().isEmpty() ||
                 binding.NickName.getText().toString().isEmpty() ||
-                binding.edSuccsesPassword.getText().toString().isEmpty()) {
-
+                binding.edSuccsesPassword.getText().toString().isEmpty() ||
+                binding.TextBirthday.getText().toString().isEmpty())
+        {
             Toast.makeText(getApplicationContext(), "Не все обязательные поля были заполнены", Toast.LENGTH_SHORT).show();
         } else if (binding.edPassword.getText().toString().length() < 6) {
             Toast.makeText(getApplicationContext(), "Пароль не может быть меньше 6 символов", Toast.LENGTH_SHORT).show();
@@ -112,8 +117,6 @@ public class registration extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT).show();
         } else if (!binding.edLogin.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+[.][a-z]+")) {
             Toast.makeText(getApplicationContext(), "Неправильный формат E-mail", Toast.LENGTH_SHORT).show();
-        } else if (!binding.edPhone.getText().toString().matches("^[+7][0-9]") && binding.edPhone.getText().toString().length() != 12) {
-            Toast.makeText(getApplicationContext(), "Неправильно набран номер", Toast.LENGTH_SHORT).show();
         } else if (!binding.NickName.getText().toString().matches("[а-яА-Яa-zA-Z0-9]+")) {
             Toast.makeText(getApplicationContext(), "В никнейме могут содержаться только буквы, цифры, и _", Toast.LENGTH_SHORT).show();
         } else {
@@ -123,9 +126,23 @@ public class registration extends AppCompatActivity {
         return result;
     }
 
-    public void writeNewUser(String userId, String name, String email) {
-        User user = new User(name, email, "");
+    public void writeNewUser(String userId, String name, String email, String birthday) {
+        User user = new User(name, email, "", birthday);
 
         mDatabase.child("Users").child(userId).setValue(user);
+    }
+    public void BirthdayOnClick(View vieww){
+        // календарь для выбора даты
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                (view, year1, monthOfYear, dayOfMonth) -> {
+                    String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1;
+                    binding.TextBirthday.setText(selectedDate);
+                }, year, month, day);
+        datePickerDialog.show();
     }
 }

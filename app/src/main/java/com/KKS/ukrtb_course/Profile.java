@@ -88,6 +88,7 @@ public class Profile extends AppCompatActivity {
                     if (user != null) {
                         binding.NickName.setText(user.username);
                         binding.edLogin.setText(user.email);
+                        binding.textBirthday.setText(user.birthday);
                         if(user.image_id != null){
                             // Проверяем на наличие действительного URL
                             if (!user.image_id.isEmpty()) {
