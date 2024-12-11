@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class registration extends AppCompatActivity {
@@ -43,6 +44,8 @@ public class registration extends AppCompatActivity {
                     String email = binding.edLogin.getText().toString();
                     String password = binding.edPassword.getText().toString();
                     String birthday = binding.TextBirthday.getText().toString();
+                    ArrayList<String> accessOfCourses = new ArrayList<String>();
+                    accessOfCourses.add("0");
 
                     // Создание пользователя в Firebase
                     mAuth.createUserWithEmailAndPassword(email, password)
@@ -63,7 +66,7 @@ public class registration extends AppCompatActivity {
                                                                         Toast.LENGTH_SHORT).show();
 
                                                                 // Запись данных нового пользователя в базу данных
-                                                                writeNewUser(user.getUid(), binding.NickName.getText().toString(), email, birthday);
+                                                                writeNewUser(user.getUid(), binding.NickName.getText().toString(), email, birthday, accessOfCourses);
 
                                                                 // Разлогинить пользователя, чтобы он подтвердил email
                                                                 mAuth.signOut();
@@ -126,8 +129,8 @@ public class registration extends AppCompatActivity {
         return result;
     }
 
-    public void writeNewUser(String userId, String name, String email, String birthday) {
-        User user = new User(name, email, "", birthday);
+    public void writeNewUser(String userId, String name, String email, String birthday, ArrayList<String> accessOfCourses) {
+        User user = new User(name, email, "", birthday, accessOfCourses);
 
         mDatabase.child("Users").child(userId).setValue(user);
     }

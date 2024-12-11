@@ -180,5 +180,9 @@ public class Profile extends AppCompatActivity {
         startActivity(new Intent(Profile.this, Courses.class));
         finish();
     }
+    public void OnClickAdmin(View view){
+        startActivity(new Intent(Profile.this, AdminMenu.class));
+        finish();
+    }
 
 }
