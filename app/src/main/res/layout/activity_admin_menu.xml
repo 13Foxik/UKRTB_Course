@@ -9,6 +9,28 @@
         android:background="@color/background">
 
     <Button
+            android:text="Robot"
+            android:layout_width="114dp"
+            android:layout_height="65dp"
+            android:id="@+id/unityBtn3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="OnClickRobot"
+            app:layout_constraintTop_toBottomOf="@+id/unityBtn2" />
+
+    <Button
+            android:text="Dron"
+            android:layout_width="114dp"
+            android:layout_height="65dp"
+            android:id="@+id/unityBtn4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="OnClickDron"
+            app:layout_constraintTop_toBottomOf="@+id/unityBtn3"
+            android:layout_marginTop="4dp" />
+
+    <Button
             android:text="back"
             android:layout_width="76dp"
             android:layout_height="40dp"
@@ -29,4 +51,14 @@
             android:layout_marginTop="104dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="OnClickUnity" />
+
+    <Button
+            android:text="1S"
+            android:layout_width="114dp"
+            android:layout_height="65dp"
+            android:id="@+id/unityBtn2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="OnClick1S"
+            app:layout_constraintTop_toBottomOf="@+id/unityBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

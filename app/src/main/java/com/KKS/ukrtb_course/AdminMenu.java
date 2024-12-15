@@ -5,24 +5,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.KKS.ukrtb_course.databinding.ActivityAdminMenuBinding;
-import com.KKS.ukrtb_course.databinding.ActivityCoursesBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -30,7 +21,6 @@ public class AdminMenu extends AppCompatActivity {
 
     private ActivityAdminMenuBinding binding;
     private DatabaseReference mDataBase;
-    private FirebaseAuth mAuth;
     private DatabaseReference uidRef;
     private String uid;
 
@@ -57,7 +47,7 @@ public class AdminMenu extends AppCompatActivity {
         uidRef = mDataBase.child("Users/").child(uid);
     }
 
-    private void setDates() {
+    private void setAccessCourse(String nameCourse) {
         ValueEventListener imageListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -68,10 +58,10 @@ public class AdminMenu extends AppCompatActivity {
                     }
 
                     // Логика добавления или удаления "Unity"
-                    if (user.accessOfCourses.contains("Unity")) {
-                        user.accessOfCourses.remove("Unity");
+                    if (user.accessOfCourses.contains(nameCourse)) {
+                        user.accessOfCourses.remove(nameCourse);
                     } else {
-                        user.accessOfCourses.add("Unity");
+                        user.accessOfCourses.add(nameCourse);
                     }
 
                     // Обновляем данные пользователя в Firebase
@@ -103,6 +93,15 @@ public class AdminMenu extends AppCompatActivity {
         finish();
     }
     public void OnClickUnity(View view){
-        setDates();
+        setAccessCourse("Unity");
+    }
+    public void OnClick1S(View view){
+        setAccessCourse("1S");
+    }
+    public void OnClickRobot(View view){
+        setAccessCourse("Robot");
+    }
+    public void OnClickDron(View view){
+        setAccessCourse("Dron");
     }
 }
