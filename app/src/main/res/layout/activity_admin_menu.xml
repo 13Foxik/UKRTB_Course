@@ -61,4 +61,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="OnClick1S"
             app:layout_constraintTop_toBottomOf="@+id/unityBtn" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/email"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="96dp"
+            android:hint="E-mail" />
+
+    <Button
+            android:text="find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/findbtn"
+            android:onClick="OnClickFind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="96dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

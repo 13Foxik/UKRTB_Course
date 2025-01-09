@@ -96,6 +96,9 @@ public class Profile extends AppCompatActivity {
                             } else {
                                 Log.e("TAG", "Image ID is empty");
                             }
+                            if(user.admin != null && user.admin){
+                                binding.adminBtn.setVisibility(View.VISIBLE);
+                            }
                         }
                     } else {
                         // Логирование или обработка случая, когда user == null
@@ -184,5 +187,7 @@ public class Profile extends AppCompatActivity {
         startActivity(new Intent(Profile.this, AdminMenu.class));
         finish();
     }
+
+
 
 }

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +25,7 @@ public class AdminMenu extends AppCompatActivity {
     private DatabaseReference mDataBase;
     private DatabaseReference uidRef;
     private String uid;
+    private String emailText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,43 @@ public class AdminMenu extends AppCompatActivity {
 
         Log.e("TAG", "Current User UID: " + uid);
         uidRef.addListenerForSingleValueEvent(imageListener); // Используем addListenerForSingleValueEvent
+    }
+
+    public void findUidByEmail(String email) {
+        Toast.makeText(AdminMenu.this,
+                email, Toast.LENGTH_SHORT).show();
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("Users");
+
+        database.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean userFound = false;
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String userEmail = userSnapshot.child("email").getValue(String.class);
+                    if (userEmail != null && userEmail.equals(email)) {
+                        String uid = userSnapshot.getKey(); // UID документа
+                        Toast.makeText(AdminMenu.this,
+                                "Uid пользователя: " + uid, Toast.LENGTH_SHORT).show();
+                        userFound = true;
+                        break; // Выход из цикла, если пользователь найден
+                    }
+                }
+                if (!userFound) {
+                    Log.d("Firebase", "Пользователь не найден");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("Firebase", "Ошибка получения UID", databaseError.toException());
+            }
+        });
+    }
+
+    public void OnClickFind(View view){
+        EditText emailEditText = findViewById(R.id.email);
+        emailText = emailEditText.getText().toString();
+        findUidByEmail(emailText);
     }
 
     public void OnClickBack(View view){
