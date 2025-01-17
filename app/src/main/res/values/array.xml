@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nameCourses">
+        <item>Unity</item>
+        <item>1S</item>
+        <item>Robot</item>
+        <item>Dron</item>
+    </string-array>
+</resources>
