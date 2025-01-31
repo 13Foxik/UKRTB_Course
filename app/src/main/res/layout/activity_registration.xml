@@ -118,5 +118,14 @@
             android:textColorLink="#FFFFFF"
             android:hint="Дата рождения" />
 
+    <Button
+            android:text="Back"
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:id="@+id/button10"
+            tools:layout_editor_absoluteY="13dp"
+            tools:layout_editor_absoluteX="9dp"
+            android:onClick="BackOnClick" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DefalutCourse"
+        tools:context=".UnityCourse"
         android:background="@color/background">
 
     <Button
@@ -20,7 +20,7 @@
             android:onClick="homeOnClick" />
 
     <TextView
-            android:text="COURSENAME"
+            android:text="Unity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
@@ -32,7 +32,7 @@
             app:layout_constraintHorizontal_bias="0.505" />
 
     <Button
-            android:text="BLOCK4"
+            android:text="Создание своего первого проекта"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/block4"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/block2" />
 
     <Button
-            android:text="BLOCK2"
+            android:text="Работа с объектами"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/block2"
@@ -52,7 +52,7 @@
             android:layout_marginEnd="16dp" />
 
     <Button
-            android:text="BLOCK1"
+            android:text="Основной синтаксис C#"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/Block1"
@@ -63,7 +63,7 @@
             android:onClick="BlockOneOnClick" />
 
     <Button
-            android:text="BLOCK3"
+            android:text="логика NPC"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/button12"

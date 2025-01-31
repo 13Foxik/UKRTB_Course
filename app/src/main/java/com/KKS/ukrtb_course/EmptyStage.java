@@ -10,22 +10,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.KKS.ukrtb_course.databinding.ActivityDefaultPage2Binding;
-import com.KKS.ukrtb_course.databinding.ActivityDefaultPage3Binding;
+import com.KKS.ukrtb_course.databinding.ActivityEmptyStageBinding;
+import com.KKS.ukrtb_course.databinding.ActivityUnityB1Binding;
 
-public class DefaultPage3 extends AppCompatActivity {
+public class EmptyStage extends AppCompatActivity {
 
-    private ActivityDefaultPage3Binding binding;
-
+    private ActivityEmptyStageBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDefaultPage3Binding.inflate(getLayoutInflater());
+        binding = ActivityEmptyStageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
     }
     public void homeOnClick(View view){
-        startActivity(new Intent(DefaultPage3.this, DefaultCourseBlockOne.class));
+        startActivity(new Intent(EmptyStage.this, Courses.class));
         finish();
     }
 }

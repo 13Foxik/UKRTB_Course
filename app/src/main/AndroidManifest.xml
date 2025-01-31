@@ -15,22 +15,43 @@
             android:theme="@style/AppTheme"
             tools:targetApi="31">
         <activity
+                android:name=".UnityB1S4P2"
+                android:exported="false" />
+        <activity
+                android:name=".UnityB1S4P1"
+                android:exported="false" />
+        <activity
+                android:name=".UnityB1S3P1"
+                android:exported="false" />
+        <activity
+                android:name=".EmptyStage"
+                android:exported="false" />
+        <activity
+                android:name=".UnityB1S2P3"
+                android:exported="false" />
+        <activity
+                android:name=".UnityB1S2P2"
+                android:exported="false" />
+        <activity
+                android:name=".UnityB1S2P1"
+                android:exported="false" />
+        <activity
                 android:name=".AdminMenu"
                 android:exported="false" />
         <activity
-                android:name=".DefaultPage3"
+                android:name=".UnityB1S1P3"
                 android:exported="false" />
         <activity
-                android:name=".DefaultPage2"
+                android:name=".UnityB1S1P2"
                 android:exported="false" />
         <activity
-                android:name=".DefaultCourseBlockOneStageOne"
+                android:name=".UnityB1S1P1"
                 android:exported="false" />
         <activity
-                android:name=".DefaultCourseBlockOne"
+                android:name=".UnityB1"
                 android:exported="false" />
         <activity
-                android:name=".DefalutCourse"
+                android:name=".UnityCourse"
                 android:exported="false" />
         <activity
                 android:name=".Courses"

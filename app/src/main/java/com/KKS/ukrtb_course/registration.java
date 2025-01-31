@@ -148,4 +148,8 @@ public class registration extends AppCompatActivity {
                 }, year, month, day);
         datePickerDialog.show();
     }
+    public void BackOnClick(View view){
+        startActivity(new Intent(registration.this, MainActivity.class));
+        finish();
+    }
 }

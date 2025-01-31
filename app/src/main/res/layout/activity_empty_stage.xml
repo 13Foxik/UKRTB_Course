@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UnityB1S1P1"
+        android:background="@color/background">
+
+    <TextView
+            android:text="Данную страницу еще не успели насытить информацией :("
+            android:layout_width="368dp"
+            android:layout_height="164dp"
+            android:id="@+id/textView4"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="MissingConstraints" />
+
+    <Button
+            android:text="Home"
+            android:layout_width="159dp"
+            android:layout_height="99dp"
+            android:id="@+id/button3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="544dp"
+            android:layout_marginStart="124dp"
+            android:onClick="homeOnClick" />
+</androidx.constraintlayout.widget.ConstraintLayout>

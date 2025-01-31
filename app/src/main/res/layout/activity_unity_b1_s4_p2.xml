@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UnityB1S1P2"
+        android:background="@color/background">
+
+    <Button
+            android:text="Finish"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:id="@+id/button2"
+            android:onClick="homeOnClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="56dp" />
+
+    <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nextBtn3"
+            android:onClick="backOnClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="56dp" />
+
+    <TextView
+            android:text="Напишите с помощью цикла for программу которая высчитает 1,2⁷²."
+            android:layout_width="367dp"
+            android:layout_height="64dp"
+            android:id="@+id/textView7"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" />
+
+    <TextView
+            android:text="Ответ округлите в большую сторону"
+            android:layout_width="355dp"
+            android:layout_height="32dp"
+            android:id="@+id/textView14"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+            android:text="Ответ:"
+            android:layout_width="67dp"
+            android:layout_height="29dp"
+            android:id="@+id/textView15"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            android:layout_marginTop="12dp" />
+
+    <ImageView
+            android:layout_width="293dp"
+            android:layout_height="136dp"
+            app:srcCompat="@drawable/pr3"
+            android:id="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp" />
+
+    <EditText
+            android:layout_width="91dp"
+            android:layout_height="41dp"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/answerText"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/textView15"
+            android:layout_marginStart="5dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

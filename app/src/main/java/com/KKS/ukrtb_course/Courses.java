@@ -6,16 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.KKS.ukrtb_course.databinding.ActivityCoursesBinding;
-import com.KKS.ukrtb_course.databinding.ActivityProfileBinding;
-import com.google.android.material.button.MaterialButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,8 +16,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class Courses extends AppCompatActivity {
 
@@ -104,7 +95,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, DefalutCourse.class));
+                    startActivity(new Intent(Courses.this, UnityCourse.class));
                     finish();
                 }
             }
@@ -116,7 +107,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, DefalutCourse.class));
+                    startActivity(new Intent(Courses.this, UnityCourse.class));
                     finish();
                 }
             }
@@ -128,7 +119,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, DefalutCourse.class));
+                    startActivity(new Intent(Courses.this, UnityCourse.class));
                     finish();
                 }
             }
@@ -140,7 +131,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, DefalutCourse.class));
+                    startActivity(new Intent(Courses.this, UnityCourse.class));
                     finish();
                 }
             }

@@ -5,7 +5,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DefaultCourseBlockOne"
+        tools:context=".UnityB1"
         android:background="@color/background"
         tools:layout_editor_absoluteY="-94dp"
         tools:layout_editor_absoluteX="-4dp">
@@ -22,7 +22,7 @@
             android:onClick="homeOnClick" />
 
     <TextView
-            android:text="COURSENAME"
+            android:text="Синтаксис C#"
             android:layout_width="320dp"
             android:layout_height="75dp"
             android:id="@+id/textView2"
@@ -33,7 +33,7 @@
             android:layout_marginTop="68dp" />
 
     <Button
-            android:text="Stage1"
+            android:text="Переменные"
             android:layout_width="371dp"
             android:layout_height="84dp"
             android:id="@+id/StageOne"
@@ -45,7 +45,7 @@
             android:onClick="StageOneOnClick" />
 
     <Button
-            android:text="Stage2"
+            android:text="Операции над переменными"
             android:layout_width="371dp"
             android:layout_height="84dp"
             android:id="@+id/button4"
@@ -53,10 +53,11 @@
             app:layout_constraintTop_toBottomOf="@+id/StageOne"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:onClick="StageTwoOnClick" />
 
     <Button
-            android:text="Stage3"
+            android:text="Циклы"
             android:layout_width="371dp"
             android:layout_height="84dp"
             android:id="@+id/button5"
@@ -64,10 +65,11 @@
             app:layout_constraintTop_toBottomOf="@+id/button4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:onClick="StageThreeOnClick" />
 
     <Button
-            android:text="Stage4"
+            android:text="Практическая работа"
             android:layout_width="371dp"
             android:layout_height="84dp"
             android:id="@+id/button6"
@@ -75,6 +77,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="32dp"
+            android:onClick="StageFourOnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
