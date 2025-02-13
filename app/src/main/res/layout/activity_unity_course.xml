@@ -6,70 +6,85 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityCourse"
-        android:background="@color/background">
+        android:background="@color/backgroundUnity">
 
     <Button
-            android:text="Home"
-            android:layout_width="80dp"
-            android:layout_height="55dp"
-            android:id="@+id/button9"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="4dp"
-            android:onClick="homeOnClick" />
-
-    <TextView
-            android:text="Unity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textSize="48sp"
-            app:layout_constraintHorizontal_bias="0.505" />
-
-    <Button
-            android:text="Создание своего первого проекта"
-            android:layout_width="170dp"
-            android:layout_height="160dp"
-            android:id="@+id/block4"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="11dp"
-            app:layout_constraintTop_toBottomOf="@+id/block2" />
-
-    <Button
-            android:text="Работа с объектами"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/block2"
-            android:layout_marginTop="72dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.941"
+            android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView17"
+            android:background="@drawable/workobject" />
 
     <Button
-            android:text="Основной синтаксис C#"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/Block1"
+            android:onClick="BlockOneOnClick"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="72dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:layout_marginStart="24dp"
-            android:onClick="BlockOneOnClick" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintTop_toBottomOf="@+id/imageView17"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/syntaxiscsharp" />
 
     <Button
-            android:text="логика NPC"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:id="@+id/button12"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintTop_toBottomOf="@+id/Block1"
-            android:layout_marginStart="24dp" />
+            android:layout_marginTop="8dp"
+            android:background="@drawable/npc" />
+
+    <Button
+            android:layout_width="170dp"
+            android:layout_height="160dp"
+            android:id="@+id/block4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintTop_toBottomOf="@+id/block2"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/makefirstprojectunity" />
+
+    <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group" />
+
+    <ImageView
+            android:layout_width="172dp"
+            android:layout_height="190dp"
+            app:srcCompat="@drawable/unitylogo"
+            android:id="@+id/imageView17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.498" />
+
+    <ImageButton
+            android:layout_width="62dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/homeico"
+            android:id="@+id/imageButton13"
+            android:background="#00FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:onClick="homeOnClick" />
+
+    <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="block4,block2,Block1,button12"
+            android:id="@+id/group2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
