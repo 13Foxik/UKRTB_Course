@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox CheckPassword;
     private EditText PasswordText;
-    private ImageButton registrationBtn;
-    private ImageButton loginBtn;
+    private Button registrationBtn;
+    private Button loginBtn;
     private ActivityMainBinding binding;
 
     private FirebaseAuth mAuth;

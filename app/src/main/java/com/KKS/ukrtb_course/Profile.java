@@ -34,11 +34,13 @@ import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Profile extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     private String uid;
-    private ImageView imageViewAvatar;
+    private de.hdodenhof.circleimageview.CircleImageView imageViewAvatar;
     private ActivityProfileBinding binding;
     private DatabaseReference mDataBase;
     private DatabaseReference uidRef;
