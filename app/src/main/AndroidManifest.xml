@@ -16,58 +16,76 @@
             tools:targetApi="31">
         <activity
                 android:name=".UnityB1S4P2"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S4P1"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S3P1"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".EmptyStage"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S2P3"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S2P2"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S2P1"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".AdminMenu"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S1P3"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S1P2"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1S1P1"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityB1"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".UnityCourse"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".Courses"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".Profile"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".registration"
+                android:screenOrientation="portrait"
                 android:exported="false" />
         <activity
                 android:name=".MainActivity"
+                android:screenOrientation="portrait"
                 android:exported="false"
                 android:theme="@style/AppTheme" />
         <activity
                 android:name=".LoadingScreen"
+                android:screenOrientation="portrait"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

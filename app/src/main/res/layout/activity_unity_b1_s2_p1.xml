@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityB1S1P1"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
 
     <ImageView
             android:layout_width="268dp"
@@ -39,7 +39,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="4dp"
             android:textAlignment="center"
-            app:layout_constraintHorizontal_bias="0.503" />
+            app:layout_constraintHorizontal_bias="0.503"
+            android:textColor="#FFFFFF" />
 
     <TextView
             android:text="Операции над переменными можно проводить разные, в основном все как в математике, сложения, вычетания, умножения и деления"
@@ -50,7 +51,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
-            android:layout_marginStart="24dp" />
+            android:layout_marginStart="24dp"
+            android:textColor="#FFFFFF" />
 
     <TextView
             android:text="Результат:"
@@ -60,7 +62,8 @@
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="24dp" />
+            android:layout_marginStart="24dp"
+            android:textColor="#FFFFFF" />
 
     <Button
             android:text="->"
@@ -71,16 +74,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="56dp"
-            android:onClick="nextOnClick" />
+            android:onClick="nextOnClick"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            android:layout_marginStart="50dp" />
 
     <Button
             android:text="Home"
             android:layout_width="80dp"
             android:layout_height="55dp"
             android:id="@+id/button3"
+            android:onClick="homeOnClick"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="4dp"
-            android:onClick="homeOnClick" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="56dp"
+            app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,41 @@
 
     <!-- кнопка для выбора аватара -->
 
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/polosabl"
+            android:id="@+id/imageView22"
+            app:layout_constraintStart_toStartOf="@+id/profilebtn"
+            app:layout_constraintEnd_toEndOf="@+id/coursebtn"
+            app:layout_constraintBottom_toBottomOf="@+id/profilebtn"
+            app:layout_constraintHorizontal_bias="1.0" />
+
+    <ImageButton
+            android:layout_width="161dp"
+            android:layout_height="92dp"
+            app:srcCompat="@drawable/profileico"
+            android:id="@+id/profilebtn"
+            android:backgroundTint="#00FFFFFF"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp" />
+
+    <ImageButton
+            android:layout_width="174dp"
+            android:layout_height="94dp"
+            app:srcCompat="@drawable/courseico"
+            android:id="@+id/coursebtn"
+            android:backgroundTint="#00FFFFFF"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toEndOf="@+id/profilebtn"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:onClick="onClickCourse" />
+
     <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageViewAvatar"
             android:layout_width="100dp"
@@ -23,6 +58,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:scaleType="centerCrop" />
 
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/square"
+            android:id="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+
     <TextView
             android:text="NickName"
             android:layout_width="386dp"
@@ -30,26 +76,25 @@
             android:id="@+id/NickName"
             android:textSize="20sp"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar"
-            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar"
+            android:layout_marginTop="84dp" />
 
     <TextView
             android:text="Email"
-            android:layout_width="391dp"
-            android:layout_height="44dp"
+            android:layout_width="386dp"
+            android:layout_height="43dp"
             android:id="@+id/edLogin"
             android:textSize="20sp"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.181"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/NickName"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
     <TextView
             android:text="01/01/2024"
@@ -60,10 +105,10 @@
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/edLogin"
             app:layout_constraintHorizontal_bias="0.501"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
     <Button
             android:text="exit"
@@ -74,33 +119,8 @@
             android:backgroundTint="#66FF0000"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="56dp"
             app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
-
-    <ImageButton
-            android:layout_width="184dp"
-            android:layout_height="106dp"
-            app:srcCompat="@drawable/courseico"
-            android:id="@+id/coursebtn"
-            android:backgroundTint="#00FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="48dp"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:onClick="onClickCourse" />
-
-    <ImageButton
-            android:layout_width="178dp"
-            android:layout_height="97dp"
-            app:srcCompat="@drawable/profileico"
-            android:id="@+id/profilebtn"
-            android:backgroundTint="#00FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/coursebtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:layout_marginBottom="52dp"
-            tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
             android:text="Admin"
@@ -111,5 +131,7 @@
             android:visibility="invisible"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

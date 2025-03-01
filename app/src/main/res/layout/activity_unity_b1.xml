@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityB1"
-        android:background="@color/background"
+        android:background="@drawable/icobg"
         tools:layout_editor_absoluteY="-94dp"
         tools:layout_editor_absoluteX="-4dp">
 
@@ -30,7 +30,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="68dp" />
+            android:layout_marginTop="68dp"
+            android:textColor="#FFFFFF" />
 
     <Button
             android:text="Переменные"

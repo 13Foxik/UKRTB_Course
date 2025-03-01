@@ -6,12 +6,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".AdminMenu"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/polosa"
+            android:id="@+id/imageView24"
+            app:layout_constraintEnd_toEndOf="@+id/spinner"
+            app:layout_constraintStart_toStartOf="@+id/spinner"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            android:layout_marginBottom="3dp" />
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/polosa"
+            android:id="@+id/imageView15"
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintStart_toStartOf="@+id/email"
+            app:layout_constraintBottom_toBottomOf="@+id/email"
+            android:layout_marginBottom="3dp" />
 
     <Button
             android:text="back"
             android:layout_width="76dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:id="@+id/on"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,19 +47,38 @@
             android:id="@+id/email"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="100dp"
-            android:layout_marginBottom="596dp"
-            android:hint="E-mail" />
+            android:layout_marginBottom="584dp"
+            android:hint="E-mail"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
+            android:shadowColor="#000000"
+            android:backgroundTint="#000000"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
-            android:layout_width="199dp"
-            android:layout_height="36dp"
+            android:layout_width="213dp"
+            android:layout_height="47dp"
             android:id="@+id/spinner"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="548dp"
+            android:layout_marginBottom="516dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.469" />
+            app:layout_constraintHorizontal_bias="0.502"
+            android:backgroundTint="#000000"
+            android:foregroundTint="#FFFFFF" />
+
+    <Button
+            android:text="Снять доступ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button11"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="448dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="64dp"
+            android:onClick="OnClickRemoveAccept" />
 
     <Button
             android:text="Дать доступ"
@@ -48,21 +87,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="56dp"
-            android:layout_marginBottom="484dp"
+            android:layout_marginBottom="448dp"
             android:id="@+id/GiveAccept"
             android:onClick="OnClickGiveAccept"
             app:layout_constraintEnd_toStartOf="@+id/button11"
-            app:layout_constraintHorizontal_bias="0.444" />
+            app:layout_constraintHorizontal_bias="0.433" />
 
-    <Button
-            android:text="Снять доступ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button11"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="484dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="72dp"
-            android:onClick="OnClickRemoveAccept" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

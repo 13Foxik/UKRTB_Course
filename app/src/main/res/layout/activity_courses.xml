@@ -6,32 +6,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Courses"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
+
+    <ImageView
+            android:layout_width="348dp"
+            android:layout_height="91dp"
+            app:srcCompat="@drawable/polosab"
+            android:id="@+id/imageView23"
+            app:layout_constraintStart_toStartOf="@+id/profilebtn5"
+            app:layout_constraintEnd_toEndOf="@+id/coursebtn4"
+            app:layout_constraintBottom_toBottomOf="@+id/profilebtn5" />
 
     <ImageButton
-            android:layout_width="184dp"
-            android:layout_height="106dp"
-            app:srcCompat="@drawable/courseico"
-            android:id="@+id/coursebtn2"
-            android:backgroundTint="#00FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-            android:layout_width="178dp"
-            android:layout_height="97dp"
+            android:layout_width="161dp"
+            android:layout_height="92dp"
             app:srcCompat="@drawable/profileico"
-            android:id="@+id/profilebtn2"
+            android:id="@+id/profilebtn5"
             android:backgroundTint="#00FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/coursebtn"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:onClick="profileOnClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" />
+
+    <ImageButton
+            android:layout_width="174dp"
+            android:layout_height="94dp"
+            app:srcCompat="@drawable/courseico"
+            android:id="@+id/coursebtn4"
+            android:backgroundTint="#00FFFFFF"
+            tools:ignore="SpeakableTextPresentCheck"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:layout_marginBottom="52dp"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:onClick="profileOnClick" />
+            android:layout_marginBottom="36dp"
+            app:layout_constraintStart_toEndOf="@+id/profilebtn5"
+            app:layout_constraintHorizontal_bias="0.941"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="45dp" />
 
     <ImageButton
             android:layout_width="170dp"
@@ -80,4 +92,5 @@
             app:layout_constraintTop_toBottomOf="@+id/OnesBtn"
             android:layout_marginTop="16dp"
             android:onClick="dronOnClick" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

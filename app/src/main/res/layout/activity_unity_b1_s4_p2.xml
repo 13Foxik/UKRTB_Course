@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityB1S1P2"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
 
     <Button
             android:text="Finish"
@@ -39,7 +39,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="#FFFFFF" />
 
     <TextView
             android:text="Ответ округлите в большую сторону"
@@ -49,7 +50,8 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            android:textColor="#FFFFFF" />
 
     <TextView
             android:text="Ответ:"
@@ -60,7 +62,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             app:layout_constraintTop_toBottomOf="@+id/imageView10"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:textColor="#FFFFFF" />
 
     <ImageView
             android:layout_width="293dp"
@@ -81,6 +84,7 @@
             android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/imageView10"
             app:layout_constraintStart_toEndOf="@+id/textView15"
-            android:layout_marginStart="5dp" />
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

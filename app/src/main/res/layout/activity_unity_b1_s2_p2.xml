@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityB1S1P2"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
 
     <Button
             android:text="Home"
@@ -51,7 +51,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
-            app:layout_constraintHorizontal_bias="0.483" />
+            app:layout_constraintHorizontal_bias="0.483"
+            android:textColor="#FFFFFF" />
 
     <TextView
             android:text="Вы могли обратить внимание на то что операции так же можно использовать и с типом данных &quot;String&quot; давайте расмотрим это "
@@ -62,7 +63,8 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="28dp" />
+            android:layout_marginStart="28dp"
+            android:textColor="#FFFFFF" />
 
     <ImageView
             android:layout_width="303dp"
@@ -93,5 +95,6 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="#FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>

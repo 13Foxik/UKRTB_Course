@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".UnityB1S1P1"
-        android:background="@color/background">
+        android:background="@drawable/icobg">
 
     <TextView
             android:text="Данную страницу еще не успели насытить информацией :("
@@ -17,7 +17,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
             tools:layout_editor_absoluteY="16dp"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:textColor="#FFFFFF" />
 
     <Button
             android:text="Home"
