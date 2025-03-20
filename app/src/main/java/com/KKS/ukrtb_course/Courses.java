@@ -107,7 +107,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, UnityCourse.class));
+                    startActivity(new Intent(Courses.this, OneS_Course.class));
                     finish();
                 }
             }
@@ -119,7 +119,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, UnityCourse.class));
+                    startActivity(new Intent(Courses.this, Robotechnology.class));
                     finish();
                 }
             }
@@ -131,7 +131,7 @@ public class Courses extends AppCompatActivity {
             @Override
             public void onAccessChecked(boolean hasAccess) {
                 if (hasAccess) {
-                    startActivity(new Intent(Courses.this, UnityCourse.class));
+                    startActivity(new Intent(Courses.this, Dron_Course.class));
                     finish();
                 }
             }

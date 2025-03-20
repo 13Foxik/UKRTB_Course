@@ -4,6 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFFFFFFF</color>
     <color name="backgroundUnity">#212121</color>
+    <color name="backgroundOneS">#eb9c00</color>
+    <color name="backgroundRoboTechnology">#204765</color>
+    <color name="backgroundDron">#8c92b5</color>
     <color name="upcolor">#1974D2</color>
     <color name="upcolordark">#12467c</color>
 </resources>
